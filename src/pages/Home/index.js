@@ -12,7 +12,7 @@ export default function Home() {
       </div>
       <div className="area-input">
         <div>
-          <FiLink size={24} color="#FFF" />
+          <FiLink size={28} color="#FFF" />
           <input placeholder="Cole aqui seu link..." />
         </div>
         <button>Encurtar Link</button>

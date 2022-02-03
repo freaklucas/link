@@ -1,7 +1,7 @@
 export default function Links() {
   return (
     <div>
-      <h1>Meus Links!</h1>
+      <h1>Links</h1>
     </div>
   );
 }
