@@ -8,7 +8,7 @@ export default function Home() {
     <div className="container-home">
       <div className="logo">
         <img src="/logo.png" alt="Sujeito link logo" />
-        <h1>Sujeito Link</h1>
+        <h1>SujeitoLink</h1>
         <span>Cole seu link para encurtar 👇</span>
       </div>
       <div className="area-input">
