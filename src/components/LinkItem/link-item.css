@@ -31,4 +31,14 @@
     align-items: center;
     justify-content: space-between;
     padding: 0 14px;
+    height: 38px;
+    border: 0;
+    border-radius: 4px;
+    color: #FFf;
+}
+
+@media (max-width: 735px) {
+    .modal-container{
+        width: 90%;
+    }
 }
