@@ -8,9 +8,11 @@ import { useState } from "react";
 
 export default function Home() {
   const [link, setLink] = useState("");
+  const [showModal, setShowModal] = useState(false);
 
   function handleShortLink() {
     alert("Meu link: " + link);
+    setShowModal(true);
   }
   return (
     <div className="container-home">
@@ -32,7 +34,7 @@ export default function Home() {
       </div>
       <Menu />
 
-      <LinkItem />
+      {showModal && <LinkItem />}
     </div>
   );
 }
