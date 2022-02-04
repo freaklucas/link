@@ -11,7 +11,6 @@ export default function Home() {
   const [showModal, setShowModal] = useState(false);
 
   function handleShortLink() {
-    alert("Meu link: " + link);
     setShowModal(true);
   }
   return (
