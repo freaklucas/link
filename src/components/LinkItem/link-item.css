@@ -7,6 +7,16 @@
     border-radius: 8px;
     display: flex;
     flex-direction: column;
+    animation: slideY 3s;
+}
+
+@keyframes slideY {
+    from {
+        transform: translateY(90px);
+    }
+    to {
+        transform: translateY(0);
+    }
 }
 
 .modal-header {
@@ -42,3 +52,4 @@
         width: 90%;
     }
 }
+
