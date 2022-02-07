@@ -1,7 +1,7 @@
 import "./link-item.css";
 import { FiX, FiClipboard } from "react-icons/fi";
 
-export default function LinkItem({ closeModal }) {
+export default function LinkItem({ closeModal, content }) {
   return (
     <div className="modal-container">
       <div className="modal-header">
@@ -10,9 +10,9 @@ export default function LinkItem({ closeModal }) {
           <FiX size={28} color="#000" />
         </button>
       </div>
-      <span>https://github.com</span>
+      <span>{content.long_url}</span>
       <button className="modal-link">
-        https://git.com
+        {content.link}
         <FiClipboard size={20} color="#FFF" />
       </button>
     </div>
