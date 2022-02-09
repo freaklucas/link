@@ -23,11 +23,14 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    text-align:justify;
 }
+
 
 .modal-header button {
     border: 0;
     background: transparent;
+    width: 12%;
 }
 
 .modal-container span {
@@ -40,6 +43,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    /* justify-content: end; */
     padding: 0 14px;
     height: 38px;
     border: 0;
@@ -47,9 +51,13 @@
     color: #FFf;
 }
 
+.modal-link button {
+    margin-left: 25px;
+}
+
 @media (max-width: 735px) {
     .modal-container{
-        width: 90%;
+        width: 80%;
     }
 }
 

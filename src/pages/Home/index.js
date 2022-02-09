@@ -35,6 +35,7 @@ export default function Home() {
         <h1>SujeitoLink</h1>
         <span>Cole seu link para encurtar 👇</span>
       </div>
+
       <div className="area-input">
         <div>
           <FiLink size={28} color="#FFF" />
@@ -44,8 +45,10 @@ export default function Home() {
             placeholder="Cole aqui seu link..."
           />
         </div>
+
         <button onClick={handleShortLink}>Encurtar Link</button>
       </div>
+
       <Menu />
 
       {showModal && (
