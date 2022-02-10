@@ -14,4 +14,10 @@ export async function saveLink(key, newLink) {
   if (hasLink) {
     return;
   }
+
+  linksStored.push(newLink);
+
+  await localStorage.setItem(key, JSON.stringify(linksStored));
+
+  console.log("link salvo com sucesso!");
 }
