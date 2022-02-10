@@ -8,6 +8,8 @@ import { useState } from "react";
 
 import api from "../../services/api";
 
+import { saveLink } from "../../services/storeLinks";
+
 export default function Home() {
   const [link, setLink] = useState("");
   const [showModal, setShowModal] = useState(false);
@@ -18,6 +20,8 @@ export default function Home() {
       const response = await api.post("/shorten", {
         long_url: link,
       });
+
+      saveLink("@encurtalink", response.data);
 
       setData(response.data);
       setShowModal(true);
