@@ -1,3 +1,5 @@
+import LinkItem from "../../components/LinkItem/index";
+
 import { useState, useEffect } from "react";
 
 import "./links.css";
@@ -26,6 +28,11 @@ export default function Links() {
     getLinks();
   }, []);
 
+  function handleOpenLink(link) {
+    setData(link);
+    setShowModal(true);
+  }
+
   return (
     <div className="links-container">
       <div className="links-header">
@@ -37,7 +44,7 @@ export default function Links() {
 
       {myLinks.map((link) => (
         <div key={link.id} className="links-item">
-          <button className="link">
+          <button className="link" onClick={() => handleOpenLink(link)}>
             <FiLink size={18} color="#FFF" />
             {link.long_url}
           </button>
@@ -46,6 +53,10 @@ export default function Links() {
           </button>
         </div>
       ))}
+
+      {showModal && (
+        <LinkItem closeModal={() => setShowModal(false)} content={data} />
+      )}
     </div>
   );
 }
