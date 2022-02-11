@@ -21,3 +21,14 @@ export async function saveLink(key, newLink) {
 
   console.log("link salvo com sucesso!");
 }
+
+export function deleteLinks(links, id) {
+  let myLinks = links.filter((item) => {
+    return item.id !== id;
+  });
+
+  localStorage.setItem("@encurtaLink", JSON.stringify(myLinks));
+  alert("Link removido!");
+
+  return myLinks;
+}

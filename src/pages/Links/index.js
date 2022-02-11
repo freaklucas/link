@@ -6,7 +6,7 @@ import "./links.css";
 import { FiArrowLeft, FiLink, FiTrash } from "react-icons/fi";
 import { Link } from "react-router-dom";
 
-import { getLinksSave } from "../../services/storeLinks";
+import { getLinksSave, deleteLinks } from "../../services/storeLinks";
 
 export default function Links() {
   const [myLinks, setMyLinks] = useState([]);
@@ -14,12 +14,14 @@ export default function Links() {
   const [data, setData] = useState([]);
   const [showModal, setShowModal] = useState(false);
 
+  const [emptyList, setEmptyList] = useState(false);
+
   useEffect(() => {
     async function getLinks() {
       const result = await getLinksSave("@encurtaLink");
 
       if (result.length === 0) {
-        console.log("lista vazia!!!");
+        setEmptyList(true);
       }
 
       setMyLinks(result);
@@ -33,6 +35,15 @@ export default function Links() {
     setShowModal(true);
   }
 
+  async function handleDelete(id) {
+    const result = await deleteLinks(myLinks, id);
+
+    if (result.lenght === 0) {
+      setEmptyList(true);
+    }
+    setMyLinks(result);
+  }
+
   return (
     <div className="links-container">
       <div className="links-header">
@@ -42,13 +53,21 @@ export default function Links() {
         <h1>Meus Links</h1>
       </div>
 
+      {emptyList && (
+        <div className="links-item">
+          <h1 className="empty-text">
+            Sua lista está <strong>vazia...</strong>
+          </h1>
+        </div>
+      )}
+
       {myLinks.map((link) => (
         <div key={link.id} className="links-item">
           <button className="link" onClick={() => handleOpenLink(link)}>
             <FiLink size={18} color="#FFF" />
             {link.long_url}
           </button>
-          <button className="link-delete">
+          <button className="link-delete" onClick={() => handleDelete(link.id)}>
             <FiTrash size={24} color="#FF5454" />
           </button>
         </div>
