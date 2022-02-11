@@ -21,7 +21,7 @@ export default function Home() {
         long_url: link,
       });
 
-      saveLink("@encurtalink", response.data);
+      saveLink("@encurtaLink", response.data);
 
       setData(response.data);
       setShowModal(true);
